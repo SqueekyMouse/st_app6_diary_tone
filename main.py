@@ -4,7 +4,7 @@ import glob
 from pathlib import Path
 # from datetime import datetime
 from nltk.sentiment import SentimentIntensityAnalyzer
-# commit: got polarity and graph Sec35
+# commit: debug: print sentiment score Sec35
 
 st.title('Diary Tone')
 
@@ -20,6 +20,7 @@ for filepath in filepaths:
     with open(filepath) as file:
         diary=file.read()
     score=analyzer.polarity_scores(diary)
+    # print(score)
     list_pos_tone.append(score['pos'])
     list_neg_tone.append(score['neg'])
 
